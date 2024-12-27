@@ -1,0 +1,197 @@
+/* Bebas Neue */
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* Russo One */
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Russo+One&display=swap");
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: Russo One;
+  font-size: 18px;
+}
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: Russo One;
+}
+html img {
+  -webkit-user-drag: none;
+}
+
+/* NAVBAR START */
+.header {
+  padding: 10px;
+}
+#nav1 {
+  color: #aa0833;
+  text-shadow: none;
+  transition: 0.3s;
+}
+#nav1:hover {
+  text-shadow: 0 0 5px orange, /* Kırmızı ışık efekti */ 0 0 10px red,
+    0 0 15px red, 0 0 20px red, 0 0 25px red, 0 0 30px red, 0 0 100px red; /* Işık halesinin büyüklüğü ve parlaklığı */
+  transition: 0.3s;
+}
+#navbarSupportedContent a {
+  color: black;
+}
+
+#navbarSupportedContent a:hover {
+  color: #aa0833;
+}
+/* NAVBAR END */
+
+/* --SECTION START-- */
+.section {
+  position: relative;
+  overflow: hidden; /* Yazının sınırlar dışına taşmasını gizler */
+  width: 100%; /* Alan genişliği */
+  height: 50px; /* Alan yüksekliği */
+  background-color: orange; /* Arka plan rengi */
+  display: flex;
+  align-items: center;
+}
+.section p {
+  color: #aa0833;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.section h1 {
+  color: #aa0833;
+}
+.marquee {
+  font-size: 2rem;
+  white-space: nowrap; /* Yazının tek satırda kalmasını sağlar */
+  display: inline-block;
+  animation: slide 10s linear infinite; /* Animasyon uygulama */
+  color: white;
+}
+
+/* Animasyon tanımı */
+@keyframes slide {
+  from {
+    transform: translateX(100%); /* Yazı sağdan başlar */
+  }
+  to {
+    transform: translateX(-100%); /* Yazı tamamen sola kayar */
+  }
+}
+/* --SECTION END-- */
+
+/* ARTICLE START */
+.article {
+  position: relative;
+}
+.text1 {
+  text-align: center;
+  color: #aa0833;
+  margin-top: 100px;
+}
+.overlay {
+  position: absolute;
+  top: 55%;
+  left: 5%;
+  color: white;
+}
+.overlay p {
+  font-size: 2vw;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+}
+/* RESPONSIVE IMAGES */
+
+/* Genel resimlerin ayarları */
+.container-image {
+  position: relative;
+}
+
+#img-1,
+#img-2 {
+  width: 100%;
+  height: auto;
+  display: none; /* İlk başta her iki resmi gizle */
+}
+
+/* 1024px ve üzeri ekran boyutları için img-1'i göster */
+@media (min-width: 960px) {
+  #img-1 {
+    display: block; /* 1024px ve üzeri ekranlarda img-1'i göster */
+  }
+}
+
+/* 1024px ve altındaki ekran boyutları için img-2'yi göster */
+@media (max-width: 960px) {
+  #img-2 {
+    display: block; /* 1024px altındaki ekranlarda img-2'yi göster */
+  }
+  .container-image .overlay {
+    display: none;
+  }
+}
+
+/* Overlay stil */
+.overlay {
+  position: absolute;
+  top: 60%;
+  left: 5%;
+  color: white;
+  font-size: 3vw;
+}
+.overlay p {
+  font-size: 50px;
+}
+/* ARTICLE END */
+
+/* CARDS START */
+.container-card {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+.card {
+  width: 500px;
+  height: auto;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+/* Kart içerisindeki resme hover efekti eklemek */
+.card {
+  overflow: hidden; /* Kartın dışına taşan öğeleri gizle */
+}
+
+/* Resme hover efekti eklemek */
+.card img {
+  transition: transform 0.3s ease-in-out; /* Büyüme efekti için geçiş */
+}
+
+/* Hover durumunda sadece resmin büyümesi */
+.card:hover img {
+  transform: scale(1.1); /* Resmi %10 büyüt */
+}
+/* CARDS END */
+
+/* PRODUCT CARDS START */
+.card {
+  margin-left: 50px;
+}
+.container-product {
+  margin-top: 100px;
+}
+.container-product a {
+  text-decoration: none;
+  color: black;
+  transition: 0.3s;
+}
+.container-product a:hover {
+  color: #aa0833;
+  transition: 0.3s;
+}
+/* PRODUCT CARDS END */
+/* FOOTER START */
+.container {
+  margin-top: 150px;
+}
+/* FOOTER END */
